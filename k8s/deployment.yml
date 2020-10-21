@@ -1,0 +1,83 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: ui-frontend-for-maintenance
+  name: ui-frontend-for-maintenance
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: ui-frontend-for-maintenance
+  template:
+    metadata:
+      labels:
+        run: ui-frontend-for-maintenance
+    spec:
+      hostname: ui-frontend-for-maintenance
+      containers:
+        - name: ui-frontend-for-maintenance
+          image: ui-frontend-for-maintenance:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 4000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: ui-frontend-for-maintenance
+  name: ui-frontend-for-maintenance
+spec:
+  selector:
+    run: ui-frontend-for-maintenance
+  type: NodePort
+  ports:
+    - port: 4000
+      protocol: TCP
+      targetPort: 4000
+      nodePort: 30040
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: ui-frontend-for-maintenance2
+  name: ui-frontend-for-maintenance2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: ui-frontend-for-maintenance2
+  template:
+    metadata:
+      labels:
+        run: ui-frontend-for-maintenance2
+    spec:
+      hostname: ui-frontend-for-maintenance2
+      containers:
+        - name: ui-frontend-for-maintenance2
+          image: ui-frontend-for-maintenance:latest
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: REACT_APP_APIURL
+              value: "http://localhost:30081/api/"
+          ports:
+            - containerPort: 4000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: ui-frontend-for-maintenance2
+  name: ui-frontend-for-maintenance2
+spec:
+  selector:
+    run: ui-frontend-for-maintenance2
+  type: NodePort
+  ports:
+    - port: 4000
+      protocol: TCP
+      targetPort: 4000
+      nodePort: 30041
+---

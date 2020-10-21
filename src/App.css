@@ -1,0 +1,344 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+* {
+  font-family: "M PLUS Rounded 1c", serif;
+}
+
+.container {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+/*.header {*/
+/*  background-color: #365592;*/
+/*  text-align: left;*/
+/*  padding: 20px;*/
+/*  height: 60px;*/
+/*}*/
+
+/*.header div.title {*/
+/*  font-size: 30px;*/
+/*  color: white;*/
+/*  height: 40px;*/
+/*  padding-top: 12px;*/
+/*}*/
+
+.ui.labeled.icon.button.logout-button {
+  position: absolute;
+  right: 1vw;
+}
+
+.Body {
+
+}
+
+.time {
+  background-color: #D8D8D8;
+  color: black;
+  width: 80px;
+  padding: 5px;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 16px;
+}
+
+.setting-column {
+  margin: 5px 5px 0 !important;
+  padding-top: 10px;
+  border: 2px solid;
+  position: relative;
+}
+
+.setting-title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 5px;
+  background-color: #365592;
+  width: 220px;
+  color: white;
+  text-align: center;
+}
+
+.setting-contents {
+  margin-top: 40px;
+}
+
+.setting-label {
+  font-size: large;
+}
+
+.setting-value {
+  font-size: medium;
+}
+
+.setting-video {
+  margin-top: 40px;
+}
+
+.font-size-x-large {
+  font-size: x-large;
+}
+
+.font-size-large {
+  font-size: large;
+}
+
+.font-size-medium {
+  font-size: medium;
+}
+
+.font-size-small {
+  font-size: small;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.upload-button {
+  border: none;
+  padding: 0;
+  line-height: 0;
+  display: block;
+  margin-left: auto;
+  width: 100px;
+}
+
+.upload-image {
+  width: 100%;
+}
+
+.button-area {
+  margin-top: 5px;
+  position: relative;
+}
+
+.button-area > a {
+  right: 0;
+  position: absolute;
+}
+
+.button-area > button {
+  width: 75px;
+}
+
+
+table.scrollable-table {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  display: block;
+}
+
+.scrollable-table > thead {
+  width: calc(100% - 9px);
+}
+
+.scrollable-table > *,
+.scrollable-table > * > tr {
+  display: table;
+  table-layout: fixed;
+}
+
+.scrollable-table > * > tr {
+  width: 100%;
+  height: 60px;
+}
+
+.scrollable-table > tbody {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  display: block;
+}
+
+.scrollable-table > * > tr > * {
+  width: 100px;
+}
+
+.work-area > .image-area, .canvas-area {
+  background-color: rgb(43, 83, 118);
+  width: 100%;
+  position: relative;
+}
+
+.work-area > .image-area:before {
+  content: "";
+  display: block;
+  padding-top: 56.25%;
+}
+
+.work-area > .image-area > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: auto;
+}
+
+.work-area > .canvas-area:before {
+  content: "";
+  display: block;
+  padding-top: 56.25%;
+}
+
+.work-area > .canvas-area > canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+.work-area > .work-button-area {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.work-list > div {
+  margin-top: 10px;
+  padding: 3px;
+  background-color: #365592;
+  color: white;
+  position: relative;
+  cursor: pointer;
+}
+
+.work-list > div.selected {
+  background-color: darkblue;
+}
+
+.work-list > div > div.ui.label {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: red;
+}
+
+.work-list > div:not(.selected) > div.ui.label {
+  display: none;
+}
+
+.result-list > .title {
+  font-size: 1.5em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.result-list > div.label {
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+div.ui.grid > div.row > div.column.step-chart-label {
+  display: flex;
+  align-items: center;
+}
+
+div.ui.grid > div.row > div.column.step-chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+span.reversed {
+  background-color: black;
+  color: white;
+}
+
+.ui.grid.connection-status {
+  margin: auto 10px;
+}
+
+
+header {
+  height: 65px;
+}
+
+nav {
+  color: #C2D7EC;
+  text-align: left;
+  background-color: #C2D7EC;
+  height: calc(100% - 125px);
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  width: 250px;
+  overflow-x: hidden;
+  flex: 1
+}
+
+.Footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 20px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.5);
+  opacity: 0.5;
+  vertical-align: bottom;
+}
+
+nav > i {
+  padding-left: 20px;
+}
+
+nav a.active {
+  color: red;
+  font-weight: bold;
+}
+
+div.main-contents {
+  position: relative;
+  overflow-x: hidden;
+  white-space: nowrap;
+  max-height: 80%;
+  margin: 0 0 auto 250px;
+  padding: 0 2vw;
+  height: calc(100vh - 130px);
+}
+
